@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astro Match!</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/core.js"></script>
+    <script type="text/javascript" src="assets/js/profielJavascript.js"></script>
+    <script type="text/javascript" src="assets/js/search.js"></script>
+    <script src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Core.init();
+            Search.init();
+        });
+    </script>
+
+    <style type="text/css">
+        .profile-result {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 7px 0;
+        }
+
+        .profile-result .result-avatar {
+            float: left;
+            width: 70px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row rij1">
+
+        <div id="logo" class="col-md-2">
+            <a href="index.html"><img src="assets/img/logo.png" class="logoImg"></a>
+            <p class="companyName">AstroMatch</p>
+        </div>
+
+        <div class="col-md-10 hidden-xs" id="topImage">
+        </div>
+
+    </div>
+
+    <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 statusContainer">
+            <p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+        </div>
+
+        <div class="padRechts col-md-2">
+        </div>
+    </div>
+
+    <div class="row rij3 clear">
+
+        <nav class="col-md-2" id="menuContainer">
+            <!--<ul class="nav nav-pills nav-stacked">-->
+            <!--<ul class="nav">-->
+            <ul class="navBtns">
+                <li role="presentation"><a href="/home.html">Home</a></li>
+                <li role="presentation"><a href="profiel.html">Mijn profiel</a></li>
+                <li role="presentation"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+                <li role="presentation" class="active"><a href="zoek.html">Zoek een match </a></li>
+                <li role="presentation" ><a href="inbox.html">Inbox </a></li>
+                <li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+            </ul>
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Zoeken</h2>
+                    <form method="get" action="#" id="form-search">
+                        <div class="form-group">
+                            <label for="querystring">Nicknaam</label>
+                            <input class="form-control" type="text" name="srch_naam" id="querystring" placeholder="Nicknaam" />
+                        </div>
+                        <!--<div class="form-group">-->
+                        <!--<label for="querystring">Leeftijd</label>-->
+                        <!--<input class="form-control" type="text" name="srch_leeftijd" id="querystring" />-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label for="querystring">Min grootte (cm)</label>
+                            <input class="form-control" type="text" name="srch_grootte_min" placeholder="160 cm" />
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Max grootte (cm)</label>
+                            <input class="form-control" type="text" name="srch_grootte_max" placeholder="175 cm" />
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Min leeftijd (jaar)</label>
+                            <input class="form-control" type="text" name="srch_leeftijd_min" placeholder="18" />
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Max leeftijd (jaar)</label>
+                            <input class="form-control" type="text" name="srch_leeftijd_max" placeholder="100" />
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Vrije tijd / Hobby's</label>
+                            <input class="form-control" type="text" name="srch_vrijetijd" placeholder="Programmeren, Designen, .." />
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Sterrenbeeld</label>
+                            <!--<input class="form-control" type="text" name="srch_sterrenbeeld" id="querystring" />-->
+                            <select name="srch_sterrenbeeld" class="form-control">
+                                <option value="">-- Kies --</option>
+                                <option value="ram">Ram</option>
+                                <option value="stier">Stier</option>
+                                <option value="tweelingen">Tweelingen</option>
+                                <option value="kreeft">Kreeft</option>
+                                <option value="leeuw">Leeuw</option>
+                                <option value="maagd">Maagd</option>
+                                <option value="weegschaal">Weegschaal</option>
+                                <option value="schorpioen">Schorpioen</option>
+                                <option value="boogschutter">Boogschutter</option>
+                                <option value="steenbok">Steenbok</option>
+                                <option value="waterman">Waterman</option>
+                                <option value="vissen">Vissen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="querystring">Regio</label>
+                            <!--<input class="form-control" type="text" name="srch_regio" id="querystring" />-->
+                            <select name="srch_regio" class="form-control">
+                                <option value="">-- Kies --</option>
+                                <option value="West-Vlaanderen">West-Vlaanderen</option>
+                                <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                                <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                                <option value="Limburg">Limburg</option>
+                                <option value="Wallonie">Walloni&euml;</option>
+                                <option value="Elders">Elders</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Zoek</button>
+                        <button type="submit" class="btn btn-danger" id="btn_blinddate">Blinddate</button>
+                    </form>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 id="search_results_count">Zoekresultaten</h2>
+                    <div id="search_results"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="padRechts col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <footer>            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+    </div>
+
+</div>
+
+<script rel="script" src="assets/js/homeJavascript.js"></script>
+
+</body>
+</html>

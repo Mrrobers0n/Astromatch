@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astro Match! - Inschrijving lidmaatschap </title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script async src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+</head>
+
+
+
+
+ <body>
+
+
+<div class="container-fluid">
+
+    <div class="row rij1">
+
+        <div id="logo" class="col-md-2">
+            <a href="home.html"><img src="assets/img/logo.png" class="logoImg"></a>
+            <p class="companyName">AstroMatch</p>
+        </div>
+
+        <div class="col-md-10 hidden-xs" id="topImage">
+        </div>
+
+    </div>
+
+    <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 statusContainer">
+                   </div>
+
+        <div class="padRechts col-md-2">
+        </div>
+    </div>
+
+    <div class="row rij3 clear">
+
+        <nav class="col-md-2" id="menuContainer">
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+
+             <h1>Reset uw wachtwoord:</h1>
+
+            <div class="formContainer col-md-10">
+                <!--<form>-->
+                <label>Email</label> <br>
+                <input type="text" name="email" id="email" class="form-control"><br>
+                <label>Nieuw wachtwoord</label> <br>
+                <input type="password" name="pw" id="pw1" class="form-control" placeholder="******"><br>
+
+                <label>Nogmaals nieuw wachtwoord</label> <br>
+                <input type="password" name="pw" id="pw2" class="form-control" placeholder="******"><br>
+
+                <input type="submit" value="Submit" id="btn">
+                <!--</form>-->
+                <div id="errors">
+                    <p id="error1" class="fouten"></p>
+                    <p id="error2" class="fouten"></p>
+                    <p id="error3" class="fouten"></p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="padRechts col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <footer>
+            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> | <a href="home.html">welkom test link</a> </p>  </footer>
+    </div>
+
+</div>
+
+<!------------------------------------javascript -------------------------------------->
+
+<script src="assets/js/resetPw.js"></script>
+
+</body>
+</html>

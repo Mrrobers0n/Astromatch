@@ -1,0 +1,46 @@
+/*berichten linker box*/
+
+.berichtTitelsContainer {
+                        margin-bottom:2em;
+                        }
+
+#berichtTitels li {  border-top: solid black 1px;
+                     /*border-bottom: solid black 1px;*/
+                     list-style: none;
+                    padding: 5px 3px;
+                       }
+
+#berichtTitels li:last-child {
+                            border-bottom: solid black 1px;
+                               }
+
+
+#berichtTitels li:before {
+                          content: "\002665 \0020";
+                           }
+
+ul#berichtTitels {     padding-left:0; }
+
+ul#berichtTitels li.active {      background-color:#526f97;
+                    color:white;
+                    font-weight:bold;
+                    }
+
+/*berichten rechter box*/
+
+#berichtContent {   background-color:#e8e8e8;
+                    padding:1.5em;
+                }
+
+#afzenderBox    {
+                background-color:#e8e8e8;
+                height:30px;
+                padding-top:5px;
+                margin-bottom:12px
+                }
+
+#btnDelete { visibility:hidden;}
+
+#berichtText {
+    margin-bottom:12px
+}

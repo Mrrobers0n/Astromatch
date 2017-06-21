@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astro Match!</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/resets.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+    <script src="assets/js/core.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Core.addMissingPropertiesToAllProfiles();
+      });
+    </script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row rij1">
+
+                    <div class="col-sm-3 links hidden-xs">
+                    </div>
+
+                    <div class="col-sm-3 welkomBox">
+                        <h1>Welkom op AstroDate</h1>
+                        <h3 class="hidden-xs"> matches made among the stars </h3>
+                        <img src="assets/img/logo.png" class="logoImg">
+                    </div>
+
+                    <div class="loginBox col-sm-3">
+
+                            <form id="login" name="login" class="inlogForm">
+                                <!--<div class="col-md-0">-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<p>E-mail: <p>&ndash;&gt;&ndash;&gt;-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<p>Wachtwoord: </p>&ndash;&gt;&ndash;&gt;-->
+                                <!--</div>-->
+                                <div class="col-sm-12">
+                                    <p> <label>E-mail: </label><br>
+                                        <input id="email" name="email" placeholder="123@example.com" type="text" class="required form-control col-sm-12 fieldPad" /> </p>
+                                    <p> <label>Wachtwoord: </label><br>
+                                        <input id="wachtwoord" placeholder="******" name="wachtwoord" type="password" class="required form-control col-sm-12 fieldPad" /></p>
+                                </div>
+                                <p><a href="wachtwoordreset.html">Wachtwoord vergeten?</a> </p>
+                                <p id="errorOutput"></p>
+                                <!--<input id="btn-inschrijven" onclick="location.href='http://localhost/Astromatch/inschrijven.html';" class="btn btn-default" type="button" value="Nog geen account?" />-->
+                                <input id="btnverstuur" name="btnverstuur" class="btn btn-default" type="submit" value="Login"/>
+                            </form>
+
+                            <p class="geenLid"> Nog geen lid van AstroDate?</p>
+
+                            <input id="btn-inschrijven" onclick="location.href='inschrijven.html';" class="btn" type="button" value="Schrijf je in" />
+
+                    </div>
+
+                    <div class="col-sm-3 rechts hidden-xs">
+                    </div>
+
+        </div>          <!--row close -->
+    </div>              <!--container close -->
+
+<!-- script rel="script" src="Assets/js/jquery.js"></script> -->
+ <script rel="script" src="assets/js/indexJavascript.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+    <!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Astro Match!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+    <script type="text/javascript" src="assets/js/profielJavascript.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+
+    <script type="text/javascript">
+
+        var refUrl = document.referrer;
+        console.log(refUrl);
+
+      $(document).ready(function() {
+        Core.init();
+        Core.HomePage.init();
+      });
+
+    </script>
+
+  <style type="text/css">
+    .welcome-bar {
+      background: #eee;
+      border: 1px solid #ddd;
+      padding: 7px;
+
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+
+    .right {
+      float: right;
+    }
+    
+    .panel-tab {
+      width: 100%;
+      background: #eee;
+      border: 1px solid #ddd;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    
+    .panel-tab a {
+      text-decoration: none;
+    }
+
+    .panel-tab .title {
+      text-align: center;
+      padding: 7px;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+      text-shadow: 1px 1px #fff;
+    }
+    
+    .panel-tab .icon {
+      text-align: center;
+      font-size: 72px;
+      color: #c4c4c4;
+      text-shadow: 1px 1px #fff;
+    }
+    
+    .panel-tab .actions a.btn {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+    }
+
+    .profile-suggestion {
+      /*width: 16.66%;*/
+      width: 14.66%;
+      margin: 0 1%;
+    }
+  </style>
+
+ </head>
+<body>
+
+ <div class="container-fluid">
+
+     <div class="row rij1">
+
+            <div id="logo" class="col-md-2">
+                <a href="index.html"><img src="assets/img/logo.png" class="logoImg"></a>
+                <p class="companyName">AstroMatch</p>
+             </div>
+
+            <div class="col-md-10 hidden-xs" id="topImage">
+             </div>
+
+    </div>
+
+     <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+         <div class="col-md-8 statusContainer">
+             <p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+         </div>
+
+         <div class="padRechts col-md-2">
+         </div>
+     </div>
+
+     <div class="row rij3 clear">
+
+         <nav class="col-md-2" id="menuContainer">
+             <!--<ul class="nav nav-pills nav-stacked">-->
+             <!--<ul class="nav">-->
+             <ul class="navBtns">
+             <li role="presentation" class="active"><a href="#">Home</a></li>
+                 <li role="presentation"><a href="profiel.html">Mijn profiel</a></li>
+                 <li role="presentation"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+                 <li role="presentation"><a href="zoek.html">Zoek een match </a></li>
+                 <li role="presentation" ><a href="inbox.html">Inbox </a></li>
+                 <li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+             </ul>
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+
+            <div class="welcomeBox col-md-12">
+               <p>  <span class="welcome"> Welkom op AstroDate!</span> </p>
+                <p> <span class="loginConfirm"> U bent succesvol ingeschreven.</span> </p>
+                <p>U kunt meteen op zoek gaan naar een match via de zoekfunctie, of uw profiel aanpassen voor betere match suggesties</p>
+            </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <!--Welkom terug _NAME_-->
+              <div class="welcome-bar" id="welcome-bar">
+                <i class="glyphicon glyphicon-user"></i> <a href="/profiel.html"><strong>_NAME_</strong></a> |
+                <i class="glyphicon glyphicon-heart"></i> <a href="/buylovecoins.html"><strong>_COINS_</strong> lovecoins</a> |
+                <i class="glyphicon glyphicon-envelope"></i> <a href="/inbox.html">_BERICHTEN_  berichten</a>
+
+                <span class="right">_DATE_</span>
+              </div>
+
+              <br />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="panel-tab">
+                <div class="title">Mijn profiel</div>
+                <div class="icon"><i class="glyphicon glyphicon-user"></i></div>
+                <div class="actions">
+                  <a href="/profiel.html" class="btn btn-primary btn-block">Ga naar mijn profiel</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="panel-tab">
+                <div class="title">Mijn inbox</div>
+                <div class="icon"><i class="glyphicon glyphicon-envelope"></i></div>
+                <div class="actions">
+                  <a href="/inbox.html" class="btn btn-success btn-block">Ga naar mijn inbox</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="panel-tab">
+                <div class="title">Zoek een profiel</div>
+                <div class="icon"><i class="glyphicon glyphicon-search"></i></div>
+                <div class="actions">
+                  <a href="/zoek.html" class="btn btn-danger btn-block">Ga naar zoeken</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="panel-tab">
+                <div class="title">Lovecoins kopen</div>
+                <div class="icon"><i class="glyphicon glyphicon-heart"></i></div>
+                <div class="actions">
+                  <a href="/buylovecoins.html" class="btn btn-warning btn-block">Koop lovecoins</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Onze nieuwste leden</h3>
+              <div id="newest_members"></div>
+            </div>
+          </div>
+        </section>
+
+         <div class="padRechts col-md-2">
+         </div>
+
+     </div>
+
+     <div class="row">
+        <footer>
+            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+      </div>
+
+ </div>
+
+     <script type="text/javascript">
+
+         var eWelcome = document.querySelector(".welcomeBox");
+
+         console.log('wheres my console log');
+
+         if (refUrl === "http://robbe-ingelbrecht.be/inschrijven.html" || refUrl === "http://www.robbe-ingelbrecht.be/inschrijven.html"  )   {
+         console.log('true');
+         eWelcome.style.display = "block";}
+
+
+    </script>
+
+ <script rel="script" src="assets/js/homeJavascript.js"></script>
+
+</body>
+</html>

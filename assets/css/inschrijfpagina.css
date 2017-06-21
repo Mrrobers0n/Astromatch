@@ -1,0 +1,16 @@
+/*foutmeldingen in rood zetten*/
+
+.fouten { color:red;
+    margin-top:5px;
+}
+
+/*submit spacing */
+.submit {margin-top: 0.8em;
+        }
+
+/*leeftijd fields uitlijning hack */
+.hack{padding-top:15px;}
+
+/*ruimte achter form fields*/
+.fieldPad { margin-bottom:1em;
+}

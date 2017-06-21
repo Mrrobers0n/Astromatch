@@ -1,0 +1,133 @@
+
+body {
+        background: url(../img/indexBg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+
+/*====================== layout grid =======================    */
+
+.rij1 { margin-top:10%;
+        background: rgba(0, 0, 0, 0.6);
+        }
+
+/*====================== Welkom tekst box =======================    */
+
+
+h1 {
+    text-align: right;
+    color: #f7e5ab;
+    font-family: times new roman, Georgia, serif;
+    margin-bottom:5%;
+    font-variant: small-caps;
+    font-size:3.3em;
+    }
+
+
+h3 {
+    text-align: right;
+    color: #f7e5ab;
+    font-family:calibri, sans-serif;
+    font-size:2em;
+    font-variant: small-caps;
+
+     }
+
+
+.welkomBox{                             /*container welkom area*/
+            /*background-color:blue;*/
+            padding-top: 0.9em;
+            padding-bottom: 2em;
+            padding-right:5%;
+         }
+
+
+.logoImg {
+            max-height:100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:2em;
+            display: block;
+         }
+
+
+/*====================== Login box  =======================    */
+
+/*container*/
+.loginBox{
+    background-color:#ffcf7d;
+    border: 1px solid black;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    padding-left:3%;
+    padding-right:3%;
+    text-align: center;
+    }
+
+/*inlog form*/
+.inlogForm {
+    padding-bottom:2em;
+    margin-bottom:2em;
+    border-bottom: 1px solid black;
+    }
+
+
+#errorOutput {
+    color:red;
+    font-weight:bold;
+    }
+
+
+.geenLid {
+    font-family:calibri, sans-serif;
+    font-size:1.5em;
+    font-variant: small-caps;
+    }
+
+.btverstuur {
+
+            }
+
+#btn-inschrijven {
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0px;
+                -webkit-box-shadow: 0px 1px 3px #666666;
+                -moz-box-shadow: 0px 1px 3px #666666;
+                box-shadow: 0px 1px 3px #666666;
+                font-family: times new roman, Georgia, serif;                color: #ffbc12;
+                font-size: 30px;
+                background: #042c63;
+                padding: 15px 25px 15px 25px;
+                margin-top:0.4em;
+                text-decoration: none;
+               }
+
+#btn-inschrijven:hover {
+                    background: #0051ba;
+                    color: #ffbc12;
+                    text-decoration: none;
+                   }
+
+.fieldPad { margin-bottom:1em;      /*ruimte achter form fields*/
+}
+
+
+
+@media (max-width:1075px) and (min-width:767px) {
+
+    #btn-inschrijven {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size:2.2em;
+    }
+
+
+    h3 {
+        font-size:1.6em;
+    }
+}

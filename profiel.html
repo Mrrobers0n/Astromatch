@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Profiel - Astro Match!</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+    <link rel="stylesheet" href="assets/css/colorbox.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+
+
+	<script type="text/javascript" src="assets/js/core.js"></script>
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			Core.init();
+		})
+	</script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row rij1">
+
+        <div id="logo" class="col-md-2">
+            <a href="index.html"><img src="assets/img/logo.png" class="logoImg"></a>
+            <p class="companyName">AstroMatch</p>
+        </div>
+
+        <div class="col-md-10 hidden-xs" id="topImage">
+        </div>
+
+    </div>
+
+    <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 statusContainer">
+            <p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+        </div>
+
+        <div class="padRechts col-md-2">
+        </div>
+    </div>
+
+    <div class="row rij3 clear">
+
+        <nav class="col-md-2" id="menuContainer">
+            <!--<ul class="nav nav-pills nav-stacked">-->
+            <!--<ul class="nav">-->
+            <ul class="navBtns">
+                <li role="presentation"><a href="/home.html">Home</a></li>
+                <li role="presentation" class="active"><a href="profiel.html">Mijn profiel</a></li>
+                <li role="presentation"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+                <li role="presentation"><a href="/zoek.html">Zoek een match </a></li>
+                <li role="presentation" ><a href="inbox.html">Inbox </a></li>
+                <li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+            </ul>
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+
+            <div>
+                <div class="row" id="profile_valid">
+                    <div class="col-md-12">
+                        <h1>Profielpagina</h1>
+
+                        <div class="alert alert-info" id="favorite_msg" style="display: none;">
+                            <i class="glyphicon glyphicon-check"></i> Je hebt _PROFILENAME_ toegevoegd aan je favorietenlijstje!
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        Welkom op de profielpagina van <span id="profile_name"></span>!<br /><br />
+                    </div>
+
+										<div class="col-md-12 hide" id="date_msg">
+											<div class="alert alert-info">
+												Hoera!! <span id="date_sender" style="font-weight: bold;">...</span> wilt graag een date met je!
+											</div>
+										</div>
+
+                    <div class="col-md-3">
+                        <div class="user-img">
+                            <img src="#" alt="Gebruiker avatar" id="profile_img" class="img-responsive" />
+                        </div><br />
+
+                        <!--<strong>Handelingen</strong><br /><br />-->
+												<div id="date_success_msg" class="alert alert-info hide">
+													<i class="glyphicon glyphicon-check"></i> Je date verzoek is verstuurd!
+												</div>
+                        <a href="/date_frame.html" id="btn_date" class="btn btn-primary btn-block hide"><i class="glyphicon glyphicon-glass"></i> Afspreken</a><br />
+                        <a href="#" id="btn_favorite" class="btn btn-danger btn-block hide"><i class="glyphicon glyphicon-plus"></i> Favoriet</a><br />
+                        <a href="#" id="btn_exp-profile" class="btn btn-success btn-block hide"><i class="glyphicon glyphicon-paperclip"></i> Uitgebreid profiel</a>
+                    </div>
+
+                    <div class="col-md-5">
+                        <table class="table table-striped" style="overflow-y: hidden;">
+                            <tr>
+                                <td>Nickname</td>
+                                <td><span id="nickname"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Leeftijd</td>
+                                <td><span id="leeftijd"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Voornaam</td>
+                                <td><span id="voornaam"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Familienaam</td>
+                                <td><span id="familienaam"></span></td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td><span id="email"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Beroep</td>
+                                <td><span id="beroep"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Regio</td>
+                                <td><span id="regio"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Geboortedatum</td>
+                                <td><span id="geboortedatum"></span></td>
+                            </tr>
+                            <tr style="font-weight: bold;">
+                                <td>Sterrenbeeld</td>
+                                <td><span id="sterrenbeeld"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Hobby's</td>
+                                <td><span id="vrijetijd"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Gewicht</td>
+                                <td><span id="gewicht"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Grootte</td>
+                                <td><span id="grootte"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Haarkleur</td>
+                                <td><span id="haarkleur"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Oogkleur</td>
+                                <td><span id="oogkleur"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Sexe</td>
+                                <td><span id="sexe"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+										<div class="col-md-4">
+                        <div id="favorites" class="hide">
+                            <h3 style="margin-top: 0;">Favorieten</h3>
+                        </div>
+
+                        <h3 style="margin-top: 0;">Suggesties</h3>
+                        <p style="font-size: 11px; color:#999;">Resultaten zijn op basis van <a href="/profielwijzigen.html#voorkeuren">uw voorkeuren</a>.</p>
+											  <div id="suggestions"></div>
+										</div>
+                </div>
+
+                <div class="row hide" id="profile_invalid">
+                    <div class="col-md-12">
+                        <br />
+                        <div class="alert alert-warning">
+                            Het profiel van deze gebruiker kan niet worden ingekeken!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="padRechts col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <footer>            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="assets/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="assets/js/profielJavascript.js"></script>
+<script type="text/javascript">
+    $('#btn_date').colorbox({})
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+
+body  {
+    overflow-y:scroll;
+    }
+
+/*------------ TOP BAR ---------------- */
+
+/* --- logo*/
+
+#logo {
+        background-color:white;
+    text-align:center;
+
+}
+
+.logoImg {  max-width:100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding-top:2em;
+            padding-bottom:0.5em;
+            }
+
+.companyName {
+             font-size:1.5em;
+}
+
+/* --- header image */
+
+#topImage {
+            background-image: url('../img/starCouple.jpg');
+            background-size: cover;
+            height:180px;
+            }
+/*------------ ORANGE BAR ---------------- */
+
+.rij2   {
+         background-color:#f0a913;
+         height:30px;
+         }
+
+#ingelogd{ color:white;
+            padding-top:5px;
+            text-align:right;
+            font-weight:bold;
+            font-size:1em;
+        }
+
+.statusContainer {
+                    height:30px;
+                }
+
+/*------------ SIDEBAR  ------------ */
+
+/*menu */
+#menuContainer {    padding-top:20px;
+                    padding-left:0px;
+                    padding-right:0px;
+                    background-color:white;
+                    }
+
+.navBtns { list-style-type: none;
+            padding-left:0px;
+            }
+
+.navBtns li {
+                padding-left:22px;
+                /*width:100%;*/
+                background-color:#e8e8e8;
+                border-bottom: 3px solid white;
+                /*margin: 0px;*/
+                color:black;
+                font-variant: small-caps;
+                font-weight: bold;
+                }
+
+.navBtns .active    {
+                    background-color:#526f97;
+                    color:white;
+                    }
+
+
+.navBtns a:link, .navBtns a:visited  {
+                color:#002b65;
+                text-decoration: none;
+                display:block;
+                padding:14px;
+                }
+
+.navBtns a:hover {
+                color: #005ad3;
+                 }
+
+/*.navBtns.active a:link {*/
+    /*color:white;*/
+/*}*/
+
+
+/*------------  PAGE CONTENT  ------------ */
+
+#pageContent{
+            background-color:white;
+            padding-top:20px;
+            padding-left:3em;
+            padding-bottom:2em;
+            border-left: 1px solid #f0a913;
+            }
+
+/*welkom bericht*/
+
+.welcomeBox {   background-color:#f9da99;
+                text-align:center;
+                padding-top:1.7em;
+                padding-bottom:1.7em;
+                margin-bottom:1.5em;
+                display:none;
+            }
+
+.welcome    {   font-family: times new roman, Georgia, serif;
+                font-size:2.8em;
+             }
+
+.loginConfirm { font-weight:bold;
+                  font-size:1.5em;}
+
+/*forms*/
+
+.fieldPad { margin-bottom:1em;      /*ruimte achter form fields*/
+            }
+
+.hack{padding-top:15px;}            /*leeftijd fields uitlijning hack */
+
+
+.fouten { color:red;                 /*foutmeldingen in rood zetten*/
+        margin-top:5px;
+        }
+
+.submit {margin-top: 0.8em;         /*submit spacing */
+        }
+
+
+/*------------ FOOTER  ------------ */
+
+footer {    background-color:#002b65;
+            height:40px;
+            padding-top:0.9em;
+                }
+
+.footerTxt { color:white;
+            margin-left:20px;
+            font-size:0.8em;
+            }
+
+footer a:link, footer a:visited {
+                                    color:white;
+                                }
+
+footer a:hover {
+                 text-decoration:none;
+                  }
+
+.clear{
+        clear: both;
+        }
+
+.profile-suggestion {
+  width: 30%;
+  float: left;
+  border: 1px solid #CCC;
+  padding: 5px;
+  margin: 0 1.5%;
+    margin-bottom: 10px;
+  position: relative;
+}
+
+.profile-suggestion:hover {
+  background: #ccc;
+}
+
+.profile-suggestion .profile-actions {
+  position: absolute;
+  right: -5px;
+  top: -8px;
+  color: red !important;
+  z-index: 50000000;
+}
+
+.profile-suggestion .profile-actions a {
+  color: red;
+}
+
+.profile-suggestion .profile-name {
+  text-align: center;
+}
+
+.profile-suggestion a:hover {
+  text-decoration: none;
+
+}
+
+.profile-suggestion .profile-img img {
+  width: 100%;
+}
+
+/***** Notifications ******/
+.notification-top {
+  position: fixed;
+  top: 0;
+  padding: 50px 0;
+  z-index: 50000000;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.notification-icon {
+  position:relative;
+  font-size: 42px;
+  padding-right: 15px;
+  top: 14px;
+}
+
+.notification-success {
+  background: #dff0d8;
+  color: #3c763d;
+  border-bottom: 5px solid #d6e9c6;
+}
+
+.notification-info {
+  background: #d9edf7;
+  color: #31708f;
+  border-bottom: 5px solid #bce8f1;
+}
+
+.notification-error {
+  background: #fcf8e3;
+  color: #8a6d3b;
+  border-bottom: 5px solid #faebcc;
+}
+
+/*** Profiel Styling ***/
+.user-img {
+  border: 2px dashed #CCC;
+}

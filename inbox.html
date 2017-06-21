@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Astro Match!</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script async src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+    <link rel="stylesheet" href="assets/css/inbox.css" />
+    <script src="assets/js/core.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row rij1">
+
+        <div id="logo" class="col-md-2">
+            <a href="index.html"><img src="assets/img/logo.png" class="logoImg"></a>
+            <p class="companyName">AstroMatch</p>
+        </div>
+
+        <div class="col-md-10 hidden-xs" id="topImage">
+        </div>
+
+    </div>
+
+    <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 statusContainer">
+            <p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+        </div>
+
+        <div class="padRechts col-md-2">
+        </div>
+    </div>
+
+    <div class="row rij3 clear">
+
+        <nav class="col-md-2" id="menuContainer">
+            <!--<ul class="nav nav-pills nav-stacked">-->
+            <!--<ul class="nav">-->
+            <ul class="navBtns">
+                <li role="presentation" ><a href="home.html">Home</a></li>
+                <li role="presentation"><a href="profiel.html">Mijn profiel</a></li>
+                <li role="presentation"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+                <li role="presentation"><a href="zoek.html">Zoek een match </a></li>
+                <li role="presentation" class="active"><a href="inbox.html">Inbox </a></li>
+                <li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+            </ul>
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+            <div class="col-md-12">
+
+                <div class="row">
+
+                    <div  class="col-md-4">
+                        <h1>Inbox</h1>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                        <div  class="col-md-4 berichtTitelsContainer"> <!--Berichttitels-->
+                            <ul id="berichtTitels" >
+
+                            </ul>
+                        </div>
+
+                        <!--<div id="afzenderBox" class="col-md-8">-->
+                            <!--Hot mama-->
+                        <!--</div>-->
+
+                        <div id="berichtContent" class="col-md-8"> <!--Berichtcontent-->
+                            <div id="berichtText">
+
+                            </div>
+                            <input id="btnDelete" type="button" class="btn btn-danger" value="delete"/>
+
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="padRechts col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <footer>
+            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+    </div>
+
+</div>
+
+<script rel="script" src="assets/js/inboxJavascript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Astro Match!</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/template.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/core.js"></script>
+    <script async src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row rij1">
+
+        <div id="logo" class="col-md-2">
+            <img src="assets/img/logo.png" class="logoImg">
+            <p class="companyName">AstroMatch</p>
+        </div>
+
+        <div class="col-md-10 hidden-xs" id="topImage">
+        </div>
+
+    </div>
+
+    <div class="row rij2">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 statusContainer">
+            <p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+        </div>
+
+        <div class="padRechts col-md-2">
+        </div>
+    </div>
+
+    <div class="row rij3 clear">
+
+        <nav class="col-md-2" id="menuContainer">
+            <!--<ul class="nav nav-pills nav-stacked">-->
+            <!--<ul class="nav">-->
+            <ul class="navBtns">
+                <li role="presentation"><a href="home.html">Home</a></li>
+                <li role="presentation"><a href="profiel.html">Mijn profiel</a></li>
+                <li role="presentation" class="active"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+                <li role="presentation"><a href="zoek.html">Zoek een match </a></li>
+                <li role="presentation" ><a href="inbox.html">Inbox </a></li>
+                <li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+            </ul>
+        </nav>
+
+        <section id="pageContent" class="col-md-8">
+
+            <form action="home.html" method="get" name="frmInschrijving" id="frmInschrijving">
+
+
+                <div class="form-group col-sm-12">
+
+                    <h1 class="inschrijfTitels">Uw profiel gegevens</h1>
+
+                    <label for="inputVoornaam">Voornaam<text class="fouten">*</text></label>
+                    <input type="text" name="voornaam" class="form-control required fieldPad" id="inputVoornaam" placeholder="Voornaam">
+
+                    <label for="inputFamilienaam">Familienaam<text class="fouten">*</text></label>
+                    <input type="text" name="familienaam" class="form-control required fieldPad" id="inputFamilienaam" placeholder="Familienaam">
+
+                    <label for="inputGeboortedatum">Geboortedatum<text class="fouten">*</text></label>
+                    <input type="date" name="geboortedatum" class="form-control required adult fieldPad" id="inputGeboortedatum" placeholder="Geboortedatum">
+
+                    <label for="inputEmail">Email address<text class="fouten">*</text></label>
+                    <input type="email" name="email-adres" class="form-control required valid_email fieldPad" id="inputEmail" placeholder="Email">
+
+                    <label for="inputNicknaam">Nickname<text class="fouten">*</text></label>
+                    <input type="text" name="nickname" class="form-control required fieldPad" id="inputNicknaam" placeholder="Nicknaam">
+
+                    <label for="inputFileFoto">Upload foto</label>
+                    <input type="file" name="foto" id="inputFileFoto" class="fieldPad">
+                    <p class="help-block">Upload een foto van uwzelf hier.</p>
+
+                    <label for="inputBeroep">Beroep</label>
+                    <input type="text" name="beroep" class="form-control fieldPad" id="inputBeroep" placeholder="Beroep">
+
+                    <label for="inputBeroep">Hobbies</label>
+                    <input type="text" name="hobbies" class="form-control fieldPad" id="inputHobbies" placeholder="Hobbies">
+
+                    <label for="inputSexe">Sexe<text class="fouten">*</text></label>
+                    <select name="sexe" class="form-control required fieldPad" id="inputSexe" placeholder="Sexe">
+                        <option value="">Maak een keuze</option>
+                        <option value="m">Man</option>
+                        <option value="v">Vrouw</option>
+                    </select>
+
+                    <label for="inputHaarkleur">Haarkleur<text class="fouten">*</text></label>
+                    <select name="haarkleur" class="form-control required fieldPad" id="inputHaarkleur" placeholder="Haarkleur">
+                        <option value="">Maak een keuze</option>
+                        <option value="lichtblond">lichtblond</option>
+                        <option value="blond">blond</option>
+                        <option value="donkerblond">donkerblond</option>
+                        <option value="lichtbruin">lichtbruin</option>
+                        <option value="bruin">bruin</option>
+                        <option value="donkerbruin">donkerbruin</option>
+                        <option value="zwart">zwart</option>
+                        <option value="ander">ander</option>
+                    </select>
+
+                    <label for="inputOogkleur">Oogkleur<text class="fouten">*</text></label>
+                    <select name="oogkleur" class="form-control required fieldPad" id="inputOogkleur" placeholder="Oogkleur">
+                        <option value="">Maak een keuze</option>
+                        <option value="groen">groen</option>
+                        <option value="bruin">bruin</option>
+                        <option value="blauw">blauw</option>
+                        <option value="blauwgrijs">blauwgrijs</option>
+                        <option value="bruingrijs">bruingrijs</option>
+                        <option value="groen-grijs">groengrijs</option>
+                        <option value="albino">albino</option>
+                    </select>
+
+                    <label for="inputGrootte">Grootte (cm)<text class="fouten">*</text></label>
+                    <input type="number" name="grootte" class="form-control required realistic_height fieldPad" id="inputGrootte" placeholder="Grootte">
+
+                    <label for="inputGewicht">Gewicht (kg) (optioneel)</label>
+                    <input type="number" name="gewicht" class="form-control realistic_weight fieldPad" id="inputGewicht" placeholder="Gewicht">
+
+                    <label for="inputRegio">Regio<text class="fouten">*</text></label>
+                    <select name="regio" class="form-control required fieldPad" id="inputRegio" placeholder="Regio">
+                        <option value="">Maak een keuze</option>
+                        <option value="West-Vlaanderen">West-Vlaanderen</option>
+                        <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                        <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                        <option value="Limburg">Limburg</option>
+                        <option value="Wallonie">Walloni&euml;</option>
+                        <option value="Elders">Elders</option>
+                    </select>
+
+                    <label for="inputWachtwoord">Wachtwoord<text class="fouten">*</text></label>
+                    <input type="password" name="wachtwoord" class="form-control required password_requirements fieldPad" id="inputWachtwoord" placeholder="Wachtwoord">
+
+                    <label for="inputWachtwoordHerhaling">Herhaal wachtwoord<text class="fouten">*</text></label>
+                    <input type="password" name="wachtwoord" class="form-control required password_requirements same_as_wachtwoord fieldPad" id="inputWachtwoordHerhaling" placeholder="Wachtwoord herhaling">
+
+                    <h1 class="inschrijfTitels" id="voorkeuren">Uw partner voorkeuren</h1>
+
+                    <label for="inputVoorkeurSexe">Voorkeur sexe<text class="fouten">*</text></label> <br>
+                    <input type="checkbox" name="sexeVoorkeur" class="" id="prefM"> man
+                    <input type="checkbox" name="sexeVoorkeur" class="check_at_least_one_preference_sex" id="prefV"> vrouw
+
+                </div>
+
+                <div class="form-group col-sm-12">
+
+                    <label for="inputVoorkeurRegioPartner">Voorkeur regio partner<text class="fouten">*</text></label> <br>
+                    <input type="checkbox" name="regioVoorkeur" class="" id="prefWestVlaanderen"> West-Vlaanderen
+                    <input type="checkbox" name="regioVoorkeur" class="" id="prefOostVlaanderen"> Oost-Vlaanderen
+                    <input type="checkbox" name="regioVoorkeur" class="" id="prefBrabant"> Vlaams-Brabant
+                    <input type="checkbox" name="regioVoorkeur" class="" id="prefLimburg"> Limburg
+                    <input type="checkbox" name="regioVoorkeur" class="" id="prefWallonie"> Wallonie
+                    <input type="checkbox" name="regioVoorkeur" class="check_at_least_one_preference_region" id="prefElders"> Elders
+
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inputVoorkeurLeeftijd">Voorkeur leeftijd<text class="fouten">*</text></label>
+                    <input type="number" id="inputVoorkeurLeeftijdMin" class="form-control required no_pedophilia no_necrophilia fieldPad " placeholder="Van ...">
+                </div>
+                <div class="col-sm-6">
+                    <p class="hack"></p>
+                    <input type="number" id="inputVoorkeurLeeftijdMax" class="form-control required no_pedophilia no_necrophilia max_age_larger_than_min fieldPad" placeholder="tot...">
+                </div>
+
+                <div class="form-group col-sm-12">
+                    <p>(<text class="fouten">*</text>) = Verplichte velden</p>
+                    <p class="fouten" id="hidden_error">Een of meerdere velden zijn niet correct</p>
+                    <button type="submit" class="btn btn-default submit">Save</button>
+                    <button type="button" id="uitschrijven" class="btn btn-danger submit">Uitschrijven</button>
+                </div>
+                <!--</div>-->
+    </form>
+
+        </section>
+
+        <div class="padRechts col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <footer>            <p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+    </div>
+
+</div>
+
+<script src="assets/js/profielWijzigenValidatie.js"></script>
+
+</body>
+</html>

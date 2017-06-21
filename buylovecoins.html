@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Astro Match!</title>
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/template.css" />
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/flexi_scrum_2.1.0.min.js"></script>
+	<script src="assets/js/core.js"></script>
+
+
+	<script type="text/javascript">
+
+		let BuyLovecoins = {
+			conversion_rate: '100', // in %
+			euro_check: null,
+			lcoin_check: null,
+
+			init: function() {
+				this._setEventHandlers();
+				this._showLovecoinAmount();
+			},
+
+			convertFromEuro: function(lc_amount) {
+				return lc_amount * 2;
+			},
+
+			convertFromLovecoin: function(euro_amount) {
+				return euro_amount * 0.5;
+			},
+
+			_setEventHandlers: function() {
+				let inputs = document.querySelectorAll('#lovecoin_form input');
+
+				for(let i=0; i < inputs.length; i++) {
+					let input = inputs[i];
+
+					if (input.getAttribute('name') == 'coins') {
+						input.addEventListener('change', function() {
+							let lc_amount = this.value;
+
+							lc_amount = parseFloat(Math.round(BuyLovecoins.convertFromLovecoin(lc_amount) * 100) / 100).toFixed(2);
+
+							BuyLovecoins.Gui.setEuros(lc_amount);
+						});
+					}
+
+					if (input.getAttribute('name') == 'euros') {
+						input.addEventListener('change', function() {
+							let euro_amount = this.value;
+
+							euro_amount = BuyLovecoins.convertFromEuro(euro_amount);
+							euro_amount = Math.floor(euro_amount);
+
+							BuyLovecoins.Gui.setLovcoins(euro_amount);
+						});
+					}
+
+					if (input.getAttribute('name') == 'buy') {
+						input.addEventListener('click', function(e) {
+							e.preventDefault();
+
+							let lc = BuyLovecoins.Gui.getLovecoins()
+									, euros = BuyLovecoins.Gui.getEuros();
+
+							if (lc == null || lc.toString() == 'NaN' || lc == 0 || lc == '') {
+								Core.Messages.show('Je moet minimum 1 lovecoin kopen!', 'error');
+								return false;
+							}
+							else if(lc < 0) {
+								Core.Messages.show('Je moet minimum 1 lovecoin kopen!', 'error');
+								return false;
+							}
+							else {}
+
+							Core.LoveCoins.add(lc);
+
+							Core.Messages.show('Transactie succesvol, je hebt nu <strong>' + lc + ' lovecoin(s)</strong> gekocht voor €' + euros, 'info');
+							BuyLovecoins.Gui.disableAll();
+
+							BuyLovecoins.Gui.showSendBackMsg();
+
+							setTimeout(function() {
+								history.go(-1);
+							}, 5000)
+						});
+					}
+				}
+			},
+
+			_showLovecoinAmount: function() {
+				document.getElementById('lc_amount').innerHTML = Core.LoveCoins.getAll() + ' lovecoins';
+			},
+
+			Gui: {
+				setLovcoins: function(amount) {
+					let eInput = document.querySelector('#lovecoin_form input[name="coins"]');
+
+					eInput.value = amount;
+				},
+
+				setEuros: function(amount) {
+					let eInput = document.querySelector('#lovecoin_form input[name=euros]');
+
+					eInput.value = amount;
+				},
+
+				getLovecoins: function() {
+					return parseInt(document.querySelector('#lovecoin_form input[name="coins"]').value);
+				},
+
+				getEuros: function() {
+					return parseFloat(document.querySelector('#lovecoin_form input[name="euros"]').value);
+				},
+
+				disableAll: function() {
+					let eInputs = document.querySelectorAll('#lovecoin_form input');
+
+					for(let i=0; i < eInputs.length; i++) {
+						eInputs[i].setAttribute('disabled', 'disabled');
+					}
+				},
+
+				showSendBackMsg: function() {
+					document.getElementById('sendbck_msg').classList.remove('hide');
+				}
+			}
+		};
+
+		var refUrl = document.referrer;
+		console.log(refUrl);
+
+		$(document).ready(function() {
+			Core.init();
+			BuyLovecoins.init();
+		});
+
+	</script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+	<div class="row rij1">
+
+		<div id="logo" class="col-md-2">
+			<a href="index.html"><img src="assets/img/logo.png" class="logoImg"></a>
+			<p class="companyName">AstroMatch</p>
+		</div>
+
+		<div class="col-md-10 hidden-xs" id="topImage">
+		</div>
+
+	</div>
+
+	<div class="row rij2">
+		<div class="col-md-2">
+		</div>
+
+		<div class="col-md-8 statusContainer">
+			<p id="ingelogd"> U bent ingelogd als: <span id="currentLogin"></span> </p>
+		</div>
+
+		<div class="padRechts col-md-2">
+		</div>
+	</div>
+
+	<div class="row rij3 clear">
+
+		<nav class="col-md-2" id="menuContainer">
+			<!--<ul class="nav nav-pills nav-stacked">-->
+			<!--<ul class="nav">-->
+			<ul class="navBtns">
+				<li role="presentation" class="active"><a href="/home.html">Home</a></li>
+				<li role="presentation"><a href="profiel.html">Mijn profiel</a></li>
+				<li role="presentation"><a href="profielwijzigen.html">Pas profiel aan</a></li>
+				<li role="presentation"><a href="zoek.html">Zoek een match </a></li>
+				<li role="presentation" ><a href="inbox.html">Inbox </a></li>
+				<li role="presentation"><a id='logout'href="#">Uitloggen </a></li>
+			</ul>
+		</nav>
+
+		<section id="pageContent" class="col-md-8">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Lovcoins kopen</h1>
+					1 lovecoin = &euro; 0,50<br />
+					Je hebt nu <strong id="lc_amount">0 lovecoins</strong>.
+					<form method="get" action="#" class="form-inline" id="lovecoin_form">
+						<div class="input-group">
+							<div class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></div>
+							<input type="text" class="form-control" name="coins" placeholder="0" />
+						</div>
+						<div class="input-group">
+							<div class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></div>
+							<input type="text" class="form-control" name="euros" placeholder="0.00" />
+						</div>
+						<div class="input-group">
+							<input type="submit" value="Kopen" class=" btn btn-primary" name="buy" />
+						</div>
+					</form><br /><br />
+
+					<div id="sendbck_msg" class="hide">
+						<img src="/assets/img/gif_loader.gif" alt="" />
+						U word binnen 5 seconden teruggestuurd of <a href="javascript: history.go(-1);">klik hier</a> om onmiddelijk terug te keren.
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="padRechts col-md-2">
+		</div>
+
+	</div>
+
+	<div class="row">
+		<footer>
+			<p class="footerTxt"> Design: &copy; ScrumTeam.com | AstroMatch &copy; 2016-2017 | <a href="#"> sitemap </a> </p>  </footer>
+	</div>
+
+</div>
+
+</body>
+</html>
